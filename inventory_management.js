@@ -1,3 +1,4 @@
+// Task 1
 const inventory = [
     { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
     { name: 'Smartphone', price: 800, quantity: 5, lowStockLevel: 2 },
@@ -5,3 +6,18 @@ const inventory = [
     { name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
     { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }       
 ];
+//Task 2
+    // use arrow function because data is an array, object is product
+const displayProductDetails = (product) => {
+    let stockStatus ;
+    // use if else to check stock status, references the inventory array for quantity and low stock level
+    if (product.quantity <= product.lowStockLevel) {
+        stockStatus = "Low Stock";
+    } else {
+        stockStatus = "In Stock";
+    }
+console.log (`Product: ${product.name}`);
+console.log (`Price: $${product.price}`);
+console.log (`Inventory amount: ${product.quantity}`);
+console.log (`Stock status: ${stockStatus}`);
+};
