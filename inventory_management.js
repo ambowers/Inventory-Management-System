@@ -2,9 +2,9 @@
 const inventory = [
     { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
     { name: 'Smartphone', price: 800, quantity: 5, lowStockLevel: 2 },
-    { name: 'Tablet', price: 400, quantity: 0, lowStockLevel: 1 }, // quantity is zero to test the if else
+    { name: 'Tablet', price: 400, quantity: 1, lowStockLevel: 2 }, // quantity is 1 to test the if else
     { name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
-    { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }       
+    { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 4 }       
 ];
 //Task 2 create a functiobn to display product details
     
@@ -33,14 +33,21 @@ function updateStock (product, unitsSold) {
 function checkLowStock () {
     inventory.forEach (product => {
         if (product.quantity < product.lowStockLevel){
-            console.log (`${product.name} is low in stock`);
-        }
-    })
+            console.log (`${product.name} is low in stock`);}});
 };
 checkLowStock ();
 // including the above line is what actually checks for the low stock
 
 // Task 5 create a function to calculate total inventory value
+
+function calculateInventoryValue () {
+    return inventory.reduce ((totalValue, product) => {
+        return totalValue + (product.price * product.quantity)},0);
+}
+// make a constant to print the calculated total val
+const inventoryTotalValue = calculateInventoryValue();
+console.log(`The total inventory value is $${inventoryTotalValue}`);
+
 
 
 
