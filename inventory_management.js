@@ -22,13 +22,25 @@ inventory.forEach(displayProductDetails);
 
 function updateStock (product, unitsSold) {
     product.quantity -= unitsSold;
-if (product.quantity = 0) {
-    console.log (`${product.name} is out of stock`);
-        // again using if else to display message according to updated stock level
-} else { (product.quantity <= product.lowStockLevel) 
-    console.log (`${product.name} is low in stock`)}
+    if (product.quantity = 0) {
+        console.log (`${product.name} is out of stock`);
+     // again using if else to display message according to updated stock level
+    } else { (product.quantity <= product.lowStockLevel) 
+        console.log (`${product.name} is low in stock`)}
 };
 
+// Task 4 create a function to check low stock products
+function checkLowStock () {
+    inventory.forEach (product => {
+        if (product.quantity < product.lowStockLevel){
+            console.log (`${product.name} is low in stock`);
+        }
+    })
+};
+checkLowStock ();
+// including the above line is what actually checks for the low stock
+
+// Task 5 create a function to calculate total inventory value
 
 
 
